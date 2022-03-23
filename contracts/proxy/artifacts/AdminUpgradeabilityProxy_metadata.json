@@ -1,0 +1,201 @@
+{
+	"compiler": {
+		"version": "0.4.24+commit.e67f0147"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newImplementation",
+						"type": "address"
+					}
+				],
+				"name": "upgradeTo",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newImplementation",
+						"type": "address"
+					},
+					{
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "upgradeToAndCall",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "implementation",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "changeAdmin",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "_implementation",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "previousAdmin",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "newAdmin",
+						"type": "address"
+					}
+				],
+				"name": "AdminChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "implementation",
+						"type": "address"
+					}
+				],
+				"name": "Upgraded",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"admin()": {
+					"return": "The address of the proxy admin.\r"
+				},
+				"changeAdmin(address)": {
+					"details": "Changes the admin of the proxy.\r Only the current admin can call this function.\r ",
+					"params": {
+						"newAdmin": "Address to transfer proxy administration to.\r"
+					}
+				},
+				"implementation()": {
+					"return": "The address of the implementation.\r"
+				},
+				"upgradeTo(address)": {
+					"details": "Upgrade the backing implementation of the proxy.\r Only the admin can call this function.\r ",
+					"params": {
+						"newImplementation": "Address of the new implementation.\r"
+					}
+				},
+				"upgradeToAndCall(address,bytes)": {
+					"details": "Upgrade the backing implementation of the proxy and call a function on the new implementation.\r This is useful to initialize the proxied contract.\r      * The given `data` should include the signature and parameters of the function to be called.\r See https://solidity.readthedocs.io/en/v0.4.24/abi-spec.html#function-selector-and-argument-encoding\r ",
+					"params": {
+						"data": "Data to send as msg.data in the low level call.\r",
+						"newImplementation": "Address of the new implementation.\r"
+					}
+				}
+			},
+			"title": "AdminUpgradeabilityProxy\r "
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"proxy/AdminUpgradeabilityProxy.sol": "AdminUpgradeabilityProxy"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"proxy/Address.sol": {
+			"keccak256": "0x2fa59de35e58cbe0201fa4d1aff45ebfc12c14cc87ec3a111c9dfe199556b0a5",
+			"urls": [
+				"bzzr://f3fa5b97d30bf9e0f15c56c0eff1d615cbd971289ebe3fe2643524d523c24a70"
+			]
+		},
+		"proxy/AdminUpgradeabilityProxy.sol": {
+			"keccak256": "0x033778fbcf475bfef88ab45f70ec510442423ec665eec786665bdd3c0b990710",
+			"urls": [
+				"bzzr://cc20d837c4d75698d9ec4ee271914317740feaf0a68c53833c09b7b9a59da116"
+			]
+		},
+		"proxy/Proxy.sol": {
+			"keccak256": "0x8830a332059bc29ce69b0f5082378c19ad657b1f6c07b7d03193f8352072f99a",
+			"urls": [
+				"bzzr://b66821ef5db13ec14b4b1f42f8dc04bebb7efd387f21ceb3af7c4e5dec466233"
+			]
+		},
+		"proxy/UpgradeabilityProxy.sol": {
+			"keccak256": "0xc78134a0fb7d2db9e2a3a53aee9de0473fc593eda3bd11249060c3b450d2946b",
+			"urls": [
+				"bzzr://2ee0833e2d8ae29b7e156e44b33b6e49d8387bda05650333015ddb8a6f0e1706"
+			]
+		}
+	},
+	"version": 1
+}
